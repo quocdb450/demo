@@ -18,6 +18,7 @@ import {useGetProductDetailPage} from './useGetProductDetailPage';
 import {AppStackScreenProps} from '../../routes/AppStack';
 import {Variants} from '../../components/Variants';
 import {CartContext} from '../../cartContextProvider/CartContext';
+import { loadImages } from '../../utils';
 
 export const ProductDetailPage = ({
   route,
@@ -69,7 +70,7 @@ export const ProductDetailPage = ({
     <ScrollView style={styles.container}>
       <View style={styles.image_view}>
         <Image
-          source={require('../../assets/clothes.png')}
+          source={loadImages(product.image)}
           style={styles.image}
           alt={product.name}
         />
