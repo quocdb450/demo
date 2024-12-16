@@ -50,7 +50,7 @@ export const useCheckout = ({navigation}: {navigation: AppStackNavProp<'Checkout
     if (!form.creditcard) {
       isValid = false;
       newError.creditcard = 'Creditcard number is required';
-    } else if (form.creditcard.length !== 16) {
+    } else if (form.creditcard.length !== 16 && form.creditcard.match(/^\d+$/) === null) {
       isValid = false;
       newError.creditcard = 'Creditcard number is invalid';
     } else {

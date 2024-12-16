@@ -62,7 +62,7 @@ export const Checkout = ({
             <Text style={styles.error}>{error.fullName}</Text>
             <TextInput
               placeholder="Phone"
-              keyboardType="phone-pad"
+              inputMode='tel'
               id="phone"
               style={styles.input}
               onChangeText={text => onTextChange('phone', text)}
@@ -84,7 +84,7 @@ export const Checkout = ({
                 placeholder="Credit Card Number"
                 id="creditcard"
                 style={styles.input}
-                keyboardType="numeric"
+                inputMode='numeric'
                 maxLength={16}
                 onChangeText={text => onTextChange('creditcard', text)}
               />
@@ -104,7 +104,7 @@ export const Checkout = ({
                 <TextInput
                   id="ccv"
                   placeholder="CCV"
-                  keyboardType="numeric"
+                  inputMode='numeric'
                   maxLength={3}
                   style={styles.input}
                   onChangeText={text => onTextChange('ccv', text)}
