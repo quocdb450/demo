@@ -1,0 +1,1 @@
+/Users/quocdoan/WorkPlace/demo/android/app/build/intermediates/cxx/Debug/16635ip2/obj/arm64-v8a
