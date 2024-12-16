@@ -1,0 +1,74 @@
+[
+    {
+      "id": "1",
+      "name": "Game A",
+      "image": "game.png",
+      "type": "video games",
+      "variations": ["Digital", "New", "Pre-Owned"],
+      "details": "Description of Game A."
+    },
+    {
+      "id": "2",
+      "name": "Shirt B",
+      "image": "clothes.png",
+      "type": "clothing",
+      "variations": ["Small", "Medium", "Large"],
+      "details": "Description of Shirt B."
+    },
+    {
+      "id": "3",
+      "name": "Console C",
+      "image": "console.png",
+      "type": "console",
+      "variations": ["New", "Pre-Owned", "Refurbished"],
+      "details": "Description of Console C."
+    },
+    {
+      "id": "4",
+      "name": "Game D",
+      "image": "game.png",
+      "type": "video games",
+      "variations": ["Digital", "New", "Pre-Owned"],
+      "details": "Description of Game D."
+    },
+    {
+      "id": "5",
+      "name": "Shirt E",
+      "image": "clothes.png",
+      "type": "clothing",
+      "variations": ["Small", "Medium", "Large"],
+      "details": "Description of Shirt E."
+    },
+    {
+      "id": "6",
+      "name": "Console F",
+      "image": "console.png",
+      "type": "console",
+      "variations": ["New", "Pre-Owned", "Refurbished"],
+      "details": "Description of Console F."
+    },
+    {
+      "id": "7",
+      "name": "Game G",
+      "image": "game.png",
+      "type": "video games",
+      "variations": ["Digital", "New", "Pre-Owned"],
+      "details": "Description of Game G."
+    },
+    {
+      "id": "8",
+      "name": "Shirt H",
+      "image": "clothes.png",
+      "type": "clothing",
+      "variations": ["Small", "Medium", "Large"],
+      "details": "Description of Shirt H."
+    },
+    {
+      "id": "9",
+      "name": "Console I",
+      "image": "console.png",
+      "type": "console",
+      "variations": ["New", "Pre-Owned", "Refurbished"],
+      "details": "Description of Console I."
+    }
+]
