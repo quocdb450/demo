@@ -59,11 +59,7 @@ export const ProductListPage = ({
     } else {
       setFilteredProducts(
         products.filter(product => {
-          return (
-            product.name.toLowerCase().includes(textFilter.toLowerCase()) ||
-            product.type.toLowerCase().includes(textFilter.toLowerCase()) ||
-            product.details.toLowerCase().includes(textFilter.toLowerCase())
-          );
+          return product.name.toLowerCase().includes(textFilter.toLowerCase());
         }),
       );
     }
