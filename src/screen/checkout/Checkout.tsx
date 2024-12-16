@@ -20,6 +20,7 @@ import {ProductItem} from '../../components/ProductItem';
 import {KeyboardAvoidingView} from 'react-native';
 import {useCheckout} from './useCheckout';
 import {AppStackNavProp} from '../../routes/AppStack';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 export const Checkout = ({
   navigation,
@@ -29,9 +30,7 @@ export const Checkout = ({
   const {listProduct} = useContext(CartContext);
   const {onTextChange, submit, error} = useCheckout({navigation});
   return (
-    <KeyboardAvoidingView
-      keyboardVerticalOffset={Platform.select({ios: 0, android: 500})}>
-      <ScrollView>
+    <KeyboardAwareScrollView>
         <View style={styles.container}>
           {listProduct.map((product: ProductInCart, index) => (
             <View key={`${product.id}_${product.selectedVariation}`}>
@@ -117,8 +116,7 @@ export const Checkout = ({
             </View>
           </View>
         </View>
-      </ScrollView>
-    </KeyboardAvoidingView>
+      </KeyboardAwareScrollView>
   );
 };
 

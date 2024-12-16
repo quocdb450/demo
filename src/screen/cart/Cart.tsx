@@ -4,37 +4,50 @@
  * It displays the items added to the cart and allows users to proceed to checkout.
  **/
 
-import React, {useContext} from 'react';
-import {View, Button, StyleSheet, Text} from 'react-native';
-import {CartContext} from '../../cartContextProvider/CartContext';
-import {ProductInCart} from '../../model/Product';
-import {ProductItem} from '../../components/ProductItem';
-import {AppStackNavProp} from '../../routes/AppStack';
+import React, { useContext } from "react";
+import { View, Button, StyleSheet, Text, ScrollView } from "react-native";
+import { CartContext } from "../../cartContextProvider/CartContext";
+import { ProductInCart } from "../../model/Product";
+import { ProductItem } from "../../components/ProductItem";
+import { AppStackNavProp } from "../../routes/AppStack";
 
-export const Cart = ({navigation}: {navigation: AppStackNavProp<'Cart'>}) => {
-  const {listProduct, clear} = useContext(CartContext);
+export const Cart = ({
+  navigation,
+}: {
+  navigation: AppStackNavProp<"Cart">;
+}) => {
+  const { listProduct, clear } = useContext(CartContext);
 
   const clearProduct = () => {
     clear();
   };
 
   return (
-    <View>
-      {listProduct.length > 0 ? (
-        listProduct.map((product: ProductInCart, index) => (
-          <View  key={`${product.id}_${product.selectedVariation}`}>
-            <ProductItem
-              product={product}
-              onPressTile={() => {navigation.navigate('ProductDetailPage', {id: product.id, title: product.name});}}
-              onPressAddCart={() => {}}
-              inCart
-            />
-            { index < listProduct.length - 1  && <View style={styles.seperator} />}
-          </View>
-        ))
-      ) : (
-        <Text> Cart is empty!</Text>
-      )}
+    <View style={styles.container}>
+      <ScrollView style={styles.scrollView}>
+        {listProduct.length > 0 ? (
+          listProduct.map((product: ProductInCart, index) => (
+            <View key={`${product.id}_${product.selectedVariation}`}>
+              <ProductItem
+                product={product}
+                onPressTile={() => {
+                  navigation.navigate("ProductDetailPage", {
+                    id: product.id,
+                    title: product.name,
+                  });
+                }}
+                onPressAddCart={() => {}}
+                inCart
+              />
+              {index < listProduct.length - 1 && (
+                <View style={styles.seperator} />
+              )}
+            </View>
+          ))
+        ) : (
+          <Text> Cart is empty!</Text>
+        )}
+      </ScrollView>
       <View style={styles.bottomView}>
         <Button
           disabled={listProduct.length === 0}
@@ -47,7 +60,7 @@ export const Cart = ({navigation}: {navigation: AppStackNavProp<'Cart'>}) => {
           disabled={listProduct.length === 0}
           title="Process to Checkout"
           onPress={() => {
-            navigation.navigate('Checkout');
+            navigation.navigate("Checkout");
           }}
         />
       </View>
@@ -58,11 +71,19 @@ export const Cart = ({navigation}: {navigation: AppStackNavProp<'Cart'>}) => {
 const styles = StyleSheet.create({
   seperator: {
     height: 1,
-    backgroundColor: 'black',
+    backgroundColor: "black",
+  },
+  container:{
+    flex: 1,
+    padding: 10,
+  },
+  scrollView:{
+    flexGrow: 1,
   },
   bottomView: {
     marginTop: 20,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    minHeight: 50,
+    justifyContent: "space-between",
   },
 });
